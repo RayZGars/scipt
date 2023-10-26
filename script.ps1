@@ -25,7 +25,7 @@ Get-AppxPackage *AV1VideoExtension* | Remove-AppxPackage
 Get-AppxPackage *WindowsFeedbackHub* | Remove-AppxPackage
 Get-AppxPackage *HEIFImageExtension* | Remove-AppxPackage
 Get-AppxPackage *GetHelp* | Remove-AppxPackage
-Get-AppxPackage *WindowsMaps* | Remove-AppxPackage
+Remove-AppxPackage WindowsMaps
 Get-AppxPackage *Todos* | Remove-AppxPackage
 Get-AppxPackage *ZuneVideo* | Remove-AppxPackage
 Get-AppxPackage *MicrosoftOfficeHub* | Remove-AppxPackage
