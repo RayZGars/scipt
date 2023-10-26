@@ -66,10 +66,6 @@ else
     #Create directory if not exists
     New-Item $Env:programdata\ET\ -ItemType Directory
 }
-Write-Host ' [Setting] Turn Off Background Apps ' -F blue -B black
-REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled  /t REG_DWORD /d 1 /f | Out-Null
-REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search" /v BackgroundAppGlobalToggle /t REG_DWORD /d 0 /f | Out-Null
-
 
 
 cmd /c pause
