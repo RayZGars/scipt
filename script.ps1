@@ -63,6 +63,29 @@ Get-AppxPackage -name “Microsoft.Windows.Photos” | Remove-AppxPackage
 
 Get-AppxPackage -name “Microsoft.WindowsPhone” | Remove-AppxPackage
 
+write-Host "Changing some settings"
+Set-ComputerProperty -Name TotalSwapFileSpace -Value 2048
+write-Host "Made Virtual RAM higher"
+Clean-Mgr
+write-Host "Cleaned temp folder"
+Defrag-Volume C: -Verbose
+write-Host "Make your C: drive faster"
+Powercfg -HighPerformance
+write-Host "Set peformance to high"
+Get-AppxPackage -AllUsers | Remove-AppxPackage -AllUsers
+write-Host "Removed unnecessary apps and services"
+Get-ScheduledTask | Where-Object {$_.TaskPath -like "*\Startup\*"} | Disable-ScheduledTask
+write-Host "Disabled startup apps"
+
+Disable-Service Superfetch
+write-Host "Disabled Superfetch freed up system resources"
+Get-Process | Where-Object {$_.CPU -gt 5} | Set-Priority BelowNormal
+write-Host "Made unnecessary processes priority Low"
+Get-Process | Where-Object {$_.CPU -gt 10} | Stop-Process
+write-Host "Stopped unnecessary procceses"
+Clear-StandbyList
+
+
 
 
 cmd /c pause
