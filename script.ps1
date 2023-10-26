@@ -19,10 +19,6 @@ write-Host "Removing bloatware"
 
 
 
-write-Host "Setting up Preference"
-
-
-
 cmd /c pause
 
 
