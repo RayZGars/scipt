@@ -22,7 +22,7 @@ Get-AppxPackage -name “Microsoft.ZuneMusic” | Remove-AppxPackage
 Get-AppxPackage -name “Microsoft.Music.Preview” | Remove-AppxPackage
 
 Get-AppxPackage -name “Microsoft.XboxIdentityProvider” | Remove-AppxPackage
-Get-AppxPackage *Clipchamp* | Remove-AppxPackage
+Get-AppxPackage -name "Clipchamp" | Remove-AppxPackage
 Get-AppxPackage -name “Microsoft.BingTravel” | Remove-AppxPackage
 
 Get-AppxPackage -name “Microsoft.BingHealthAndFitness” | Remove-AppxPackage
