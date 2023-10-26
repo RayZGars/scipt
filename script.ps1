@@ -1,11 +1,11 @@
 write-Host "Starting thanks for using the script"
 
-write-Host "                   ██████╗  █████╗ ███╗   ███╗███████╗██████╗                     " -ForegroundColor DarkCyan 
-write-Host "                  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔══██╗                   " -ForegroundColor DarkCyan 
-write-Host "                  ██║  ██╗ ███████║██╔████╔██║█████╗  ██████╔╝                   " -ForegroundColor DarkCyan 
-write-Host "                  ██║  ╚██╗██╔══██║██║╚██╔╝██║██╔══╝  ██╔══██╗                  " -ForegroundColor DarkCyan 
-write-Host "                  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗██║  ██║                 " -ForegroundColor DarkCyan 
-write-Host "                   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝                     " -ForegroundColor DarkCyan
+write-Host "  ██████╗  █████╗ ███╗   ███╗███████╗██████╗ "  
+write-Host "  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔══██╗ " 
+write-Host "   ██║  ██╗ ███████║██╔████╔██║█████╗  ██████╔╝ " 
+write-Host "   ██║  ╚██╗██╔══██║██║╚██╔╝██║██╔══╝  ██╔══██╗   " 
+write-Host "   ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗██║  ██║ " 
+write-Host "    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝  " 
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Output "You must run powershell -File C:/Users/yourusername/script.ps1 as an admin opening windows powershell as a admin"
