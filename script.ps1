@@ -1,4 +1,4 @@
-write-Host "Starting"
+write-Host "Starting thanks for using the script"
 
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
@@ -8,14 +8,13 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
    break
 }
 
-
-winget install -e --id Mozilla.Firefox
-
-write-Host "Done installing "
-
 write-Host "Setting high peformance"
 
 powercfg.exe -SETACTIVE 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+
+write-Host "Debloating removing pre-installed apps"
+
+Get-AppxPackage *WindowsAlarms* | Remove-AppxPackage
 
 
 cmd /c pause
