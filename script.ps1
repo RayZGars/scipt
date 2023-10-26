@@ -16,6 +16,11 @@ write-Host "Debloating removing pre-installed apps"
 
 Get-AppxPackage *WindowsAlarms* | Remove-AppxPackage
 
+Function MinimalProcesses {
+$host.ui.RawUI.WindowTitle = 'GamerOS Optimizer'
+$ram = (Get-CimInstance -ClassName Win32_PhysicalMemory | Measure-Object -Property Capacity -Sum).Sum / 1kb
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value $ram -Force
+}
 
 cmd /c pause
 
