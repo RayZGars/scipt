@@ -14,7 +14,7 @@ write-Host "Setting high peformance"
 
 powercfg.exe -SETACTIVE 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
-wirte-Host "Removing bloatware" 
+write-Host "Removing bloatware" 
  # Packages
   foreach ($package in @(
       "*Microsoft.BingNews*"
