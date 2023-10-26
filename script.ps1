@@ -44,7 +44,6 @@ Get-AppxPackage *ZuneVideo* | Remove-AppxPackage
 Get-AppxPackage *MicrosoftOfficeHub* | Remove-AppxPackage
 Get-AppxPackage *BingNews* | Remove-AppxPackage
 Get-AppxPackage *OneDriveSync* | Remove-AppxPackage
-Get-AppxPackage *People* | Remove-AppxPackage
 Get-AppxPackage *Windows.Photos* | Remove-AppxPackage
 Get-AppxPackage *SkypeApp* | Remove-AppxPackage
 Get-AppxPackage *MicrosoftSolitaireCollection* | Remove-AppxPackage
