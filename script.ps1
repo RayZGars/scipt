@@ -45,27 +45,7 @@ wirte-Host "Removing bloatware"
     } | Out-Null
   }
 write-Host "Setting up Preference"
-  # Enable Clipboard History
-  Set-ItemProperty "HKCU:\Software\Microsoft\Clipboard" -Name EnableClipboardHistory -Value 1
 
-  # Mouse
-  Set-ItemProperty "HKCU:\Control Panel\Mouse" -Name MouseSpeed -Value 0
-  Set-ItemProperty "HKCU:\Control Panel\Mouse" -Name MouseSensitivity -Value 12
-
-  # Enable Dark Mode
-  Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name SystemUsesLightTheme -Value 0
-  Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name AppsUseLightTheme -Value 0
-# Cleaning help files
-if (Test-Path $Env:programdata\*.lbool) {Remove-Item $Env:programdata\*.lbool}
-if (Test-Path $Env:programdata\ET\*.lbool) {Remove-Item $Env:programdata\ET\*.lbool}
-if (Test-Path $Env:programdata\*.lbool) {Remove-Item $Env:programdata\ET\*.lbool}
-if (Test-Path $Env:programdata\ET\) {
-}
-else
-{
-    #Create directory if not exists
-    New-Item $Env:programdata\ET\ -ItemType Directory
-}
 
 
 cmd /c pause
