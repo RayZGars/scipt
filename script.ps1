@@ -1,6 +1,6 @@
 write-Host "Starting thanks for using the script"
 
-write-Host "  ██████╗  █████╗ ███╗   ███╗███████╗██████╗ "  
+write-Host "G120-Script"  
 
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
@@ -15,35 +15,56 @@ write-Host "Setting high peformance"
 powercfg.exe -SETACTIVE 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 
 write-Host "Removing bloatware" 
- # Packages
-  foreach ($package in @(
-      "*Microsoft.BingNews*"
-      "*Microsoft.BingWeather*"
-      "*Microsoft.GamingApp*"
-     "*Microsoft.OneDrive*"
-           "*Microsoft.WindowsMaps*"
-      "*Microsoft.Getstarted*"
-      "*Microsoft.MicrosoftOfficeHub*"
-      "*Microsoft.MicrosoftSolitaireCollection*"
-      "*Microsoft.MicrosoftStickyNotes*"
-      "*Microsoft.PowerAutomateDesktop*"
-      "*Microsoft.Todos*"
-      "*microsoft.windowscommunicationsapps*"
-      "*Microsoft.WindowsFeedbackHub*"
-      "*Microsoft.WindowsSoundRecorder*"
-      "*Microsoft.Xbox.TCUI*"
-      "*Microsoft.ZuneMusic*"
-      "*Microsoft.ZuneVideo*"
-      "*MicrosoftTeams*"
+"
 
-      "*MicrosoftWindows.Client.WebExperience*"
-      "*Microsoft.GetHelp*"
-    )) {
-    Get-AppxPackage -AllUsers $package | Remove-AppxPackage
-    Get-AppxProvisionedPackage -Online | Where-Object { $_.PackageName -Like $package } | ForEach-Object {
-      Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName
-    } | Out-Null
-  }
+# Packages
+
+Get-AppxPackage -name “Microsoft.ZuneMusic” | Remove-AppxPackage
+Get-AppxPackage -name “Microsoft.Music.Preview” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.XboxIdentityProvider” | Remove-AppxPackage
+Get-AppxPackage *Clipchamp* | Remove-AppxPackage.
+Get-AppxPackage -name “Microsoft.BingTravel” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingHealthAndFitness” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingFoodAndDrink” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.People” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingFinance” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.3DBuilder” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.WindowsCalculator” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingNews” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.XboxApp” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingSports” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.WindowsCamera” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.Getstarted” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.Office.OneNote” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.WindowsMaps” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.MicrosoftSolitaireCollection” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.MicrosoftOfficeHub” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BingWeather” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.BioEnrollment” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.Windows.Photos” | Remove-AppxPackage
+
+Get-AppxPackage -name “Microsoft.WindowsPhone” | Remove-AppxPackage
+
+
 write-Host "Setting up Preference"
 
 
