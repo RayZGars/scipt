@@ -64,6 +64,8 @@ Get-AppxPackage -name “Microsoft.Windows.Photos” | Remove-AppxPackage
 Get-AppxPackage -name “Microsoft.WindowsPhone” | Remove-AppxPackage
 
 write-Host "Changing some settings"
+Get-Process -Name svchost.exe,wininit.exe,lsass.exe | Stop-Process
+write-Host "Stopped unnsecarry serveices"
 Set-ComputerProperty -Name TotalSwapFileSpace -Value 2048
 write-Host "Made Virtual RAM higher"
 Clean-Mgr
